@@ -53,7 +53,6 @@ const [p2pmsgs,setP2pmsgs] = useState([]); //person to person msg
       postsArray.push({...doc.data(),id:doc.id});
     });
     setP2pmsgs(postsArray);
-    console.log(postsArray);
   
   }
   getMessages();
