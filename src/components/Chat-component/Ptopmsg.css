@@ -7,6 +7,12 @@
     border: 1px solid white;
     border-radius: 20px;
 }
+.nav-profile-pic
+ {
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+ }
 .p2p-section-1
 {
     display: flex;

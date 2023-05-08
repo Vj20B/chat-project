@@ -27,25 +27,25 @@ getchatlist();
 {props ? <div>
   <Navbar userdata={loggeduser} />
   <div className='big-head-1'>
-Userchats
+<p>Userchats</p>
   </div>
   <div className='chat-list'> 
   {chats.length > 0 ? 
   
  <>
- {chats.map((chat) => {
+ {chats.map((chat) => (
   <Link style ={{textDecoration: 'none'}} to ={`/msgp2p/${chat.fuseruid}`}>
-    <div className = 'chat-single'>
-      <img src={chat.fprofpic} className='nav-profile-pic'/>
+    <div className='chat-single'>
+      <img src={chat.fprofpic} className='nav-profile-pic' alt='profiorimage'/>
       <p>{chat.fusername}</p>
 </div>
   </Link>
- })}
+ ))}
  </>
   : 
   <div>
     No chats
-    </div>}
+  </div>}
   </div>
 </div>
 : 
