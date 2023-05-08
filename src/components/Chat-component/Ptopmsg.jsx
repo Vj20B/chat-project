@@ -41,7 +41,7 @@ msgdocp2p = `${fuseruid}_${loggeduser.uid}`
 const[typedmsg,setTypedmsg] = useState(" "); //type msg
 const [p2pmsgs,setP2pmsgs] = useState([]); //person to person msg
 
-
+useEffect(()=>{
   const  getMessages = async ()=> //msg get from databse
   {
     const postsArray = [];
@@ -56,7 +56,7 @@ const [p2pmsgs,setP2pmsgs] = useState([]); //person to person msg
   
   }
   getMessages();
-
+},[p2pmsgs]);
 
 
 
