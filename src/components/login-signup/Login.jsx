@@ -65,7 +65,7 @@ const Login = () => {
   return (
    
     <div>
-        <Navbar />
+        <Navbar/>
         <div className='form-outermost'>
           <h1>Login</h1>
           <form className='form-inner'>
@@ -79,9 +79,8 @@ const Login = () => {
 </>}
 
             <input onChange = {(e)=>setEmail(e.target.value)} placeholder='enter your email addres' type='email'/>
-
             <input onChange = {(e)=>setPassword(e.target.value)} placeholder='enter your password' type='password'/>
-                        <button onClick ={handleSubmit}>Submit</button>
+            <button onClick ={handleSubmit}>Submit</button>
           </form>
         </div>
     </div>

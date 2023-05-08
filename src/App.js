@@ -13,6 +13,8 @@ import { db, auth } from './firebase/fireconfig';
 import {doc, getDocs , query ,where} from "firebase/firestore";
 import { useNavigate } from 'react-router-dom';
 import Addpost from './components/posts/Addpost';
+import Friendprofile from './components/Friendsprofile/Friendprofile';
+import Ptopmsg from './components/Chat-component/Ptopmsg';
 
 
 function App() {
@@ -55,8 +57,8 @@ GetCurrentusers();
       <Route path='/userchats' element={<UserChats userdata={user}/>}/>
       <Route path='/userprofile' element={<UserProfile userdata={user}/>}/>
       <Route path='/addpost' element={<Addpost userdata={user}/>}/>
-
-      
+<Route path='/searchedprofile/:fuseruid' element={<Friendprofile userdata={user}/>}/>
+      <Route path='/msgp2p/:fuseruid' element={<Ptopmsg userdata={user}/>}/>
 
 
       <Route path='*' element={<Fof userdata={user}/>}/>

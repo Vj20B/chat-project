@@ -28,7 +28,24 @@ const Navbar = (props) => {
     })
 
   }
- 
+ const [finduser,setFinduser] = useState(""); //find user
+ const[finduserdoc,setFinduserdoc] = useState(""); //find user data{email,post,name}
+
+ const searchuser = (e) => {
+ e.preventDefault();
+
+ const getUser = async() =>
+ {
+  const q = query(collection(db,'users'),where("email", "==", finduser));
+  const data = await getDocs(q);
+  setFinduserdoc(data.docs.map((doc) => ({ ...doc.data(),id:doc.id })));
+  if(finduserdoc.length !== 0){
+  navigate(`/searchedprofile/${finduserdoc[0].uid}`);
+  }
+ }
+ getUser();
+
+}
   
   return (
     <div> 
@@ -37,6 +54,12 @@ const Navbar = (props) => {
 <img src={logo} alt='logo-image'/>
             </div>
             
+            {curruser !== undefined ? 
+            <div className='center'> 
+            <input placeholder='search a friend by email..' onChange={(e)=>setFinduser(e.target.value)} className='search-user'/>
+            <button onClick={searchuser}>&gt;</button>
+            </div> : 
+            <div> </div>}
 
             {curruser !== undefined ?
             

@@ -27,7 +27,7 @@ const UserProfile = (props) => {
     console.log(postsArray);
   }
   getposts();
- })
+ },[])
 
  posts.sort((a,b)=>
  {
